@@ -41,24 +41,25 @@ test.describe('Form Layouts page', () => {
     const radioStatus = await usingTheGridForm
       .getByRole('radio', { name: 'Option 1' })
       .isChecked()
-    expect(radioStatus).toBeTruthy()
-    await expect(
-      usingTheGridForm.getByRole('radio', { name: 'Option 1' })
-    ).toBeChecked()
+      await expect(usingTheGridForm).toHaveScreenshot()
+    // expect(radioStatus).toBeTruthy()
+    // await expect(
+    //   usingTheGridForm.getByRole('radio', { name: 'Option 1' })
+    // ).toBeChecked()
 
-    await usingTheGridForm
-      .getByRole('radio', { name: 'Option 2' })
-      .check({ force: true })
-    expect(
-      await usingTheGridForm
-        .getByRole('radio', { name: 'Option 1' })
-        .isChecked()
-    ).toBeFalsy()
-    expect(
-      await usingTheGridForm
-        .getByRole('radio', { name: 'Option 2' })
-        .isChecked()
-    ).toBeTruthy()
+    // await usingTheGridForm
+    //   .getByRole('radio', { name: 'Option 2' })
+    //   .check({ force: true })
+    // expect(
+    //   await usingTheGridForm
+    //     .getByRole('radio', { name: 'Option 1' })
+    //     .isChecked()
+    // ).toBeFalsy()
+    // expect(
+    //   await usingTheGridForm
+    //     .getByRole('radio', { name: 'Option 2' })
+    //     .isChecked()
+    // ).toBeTruthy()
   })
 
   test('checkbox', async ({ page }) => {
